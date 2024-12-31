@@ -6,7 +6,7 @@ st.set_page_config(layout='wide')
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image("images/photo.png")
+    st.image("images/photo.png", width=450)
 
 with col2:
     st.title("Serge Pille")
@@ -31,13 +31,8 @@ with open("data.csv", "r") as file:
             st.subheader(row['title'])
             st.write(row['description'])
             st.image(img_url, width=200)
-            st.write(row['url'])
-            if cols_index == 0:
-                cols_index = 1
-            else:
+            st.write(f"[Source Code]({row['url']})")
+            cols_index += 1
+            if cols_index >= len(cols):
                 cols_index = 0
-
-
-
-
 
