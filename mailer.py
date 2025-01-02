@@ -3,12 +3,16 @@
 import smtplib
 import ssl
 from email.message import EmailMessage
+import os
+from dotenv import load_dotenv
 
-host = "smtp.gmail.com"
-port = 465
+load_dotenv()
+
+host = os.getenv("HOST")
+port = os.getenv("PORT")
+username = os.getenv("USERNAME")
+password = os.getenv("PASSWORD")
 my_context = ssl.create_default_context()
-username= "sergepille70@gmail.com"
-password = "wooq cdbp lvkf yzpd"
 
 def send(receiver, subject, message):
     mail = EmailMessage()
