@@ -9,9 +9,5 @@ with st.form(key='frm_email'):
     txt_subject = "Mail from my Portfolio App"
     btn_email = st.form_submit_button()
     if btn_email:
-        print("Button was pressed")
-        print(btn_email)
-        print(txt_email)
-        print(txt_message)
         mailer.send(txt_email, txt_subject, txt_message)
         st.info("Your email was sent successfully")
